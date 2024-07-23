@@ -47,6 +47,7 @@
             android:layout_height="match_parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/trMainActivityFirstRow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -67,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:minWidth="10dp"
-                    android:text="D"
+                    android:text="+"
                     app:cornerRadius="10dp"
                     app:layout_constraintStart_toEndOf="@+id/button5"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -78,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:minWidth="10dp"
-                    android:text="+"
+                    android:text="-"
                     app:cornerRadius="10dp"
                     app:layout_constraintStart_toEndOf="@+id/button7"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -89,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:minWidth="10dp"
-                    android:text="-"
+                    android:text="x"
                     app:cornerRadius="10dp"
                     app:layout_constraintStart_toEndOf="@+id/button6"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -100,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:minWidth="10dp"
-                    android:text="x"
+                    android:text="/"
                     app:cornerRadius="10dp"
                     app:layout_constraintStart_toEndOf="@+id/button8"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -114,6 +115,7 @@
             android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/trMainActivitySecondRow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -181,6 +183,7 @@
             android:layout_height="match_parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/trMainActivityThirdRow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
