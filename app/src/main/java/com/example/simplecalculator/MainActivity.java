@@ -18,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
     TextView tvMainActivityHasil;
     float result;
     String numberToDisplay = "";
-    String lastOperation = "";
-    String lastNumber = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,49 +80,12 @@ public class MainActivity extends AppCompatActivity {
     }
     void reset(){
         result = 0;
-        numberToDisplay = "0.0";
-        lastNumber = "0";
-        lastOperation = "";
+        numberToDisplay = "";
         tvMainActivityHasil.setText(String.valueOf(result));
     }
 
     void addOperation(String operation){
         String newNumberToDisplay = numberToDisplay + operation;
-//        lastOperation = operation;
-//
-//        switch (operation) {
-//            case "+":
-//                if (result == 0 || String.valueOf(result).equals(lastNumber)){
-//                    result = Float.parseFloat(lastNumber);
-//                }else {
-//                    result = result + Float.parseFloat(lastNumber);
-//                }
-//                break;
-//            case "-":
-//                if (result == 0 || String.valueOf(result).equals(lastNumber)){
-//                    result = Float.parseFloat(lastNumber);
-//                }else {
-//                    result = result - Float.parseFloat(lastNumber);
-//                }
-//                break;
-//            case "x":
-//                if (result == 0 || String.valueOf(result).equals(lastNumber)){
-//                    result = Float.parseFloat(lastNumber);
-//                }else {
-//                    result = result * Float.parseFloat(lastNumber);
-//                }
-//                break;
-//            case "/":
-//                if (result == 0 || String.valueOf(result).equals(lastNumber)){
-//                    result = Float.parseFloat(lastNumber);
-//                }else {
-//                    result = result / Float.parseFloat(lastNumber);
-//                }
-//                break;
-//
-//            default:
-//
-//        }
 
         tvMainActivityHasil.setText(newNumberToDisplay);
         numberToDisplay = newNumberToDisplay;
@@ -138,50 +99,12 @@ public class MainActivity extends AppCompatActivity {
             numberToDisplay = numberToDisplay + number;
         }
         tvMainActivityHasil.setText(numberToDisplay);
-
-        String[] parts = numberToDisplay.split("[x+\\-/]");
-        lastNumber = parts[parts.length - 1];
     }
 
     void startCalculation(){
-//        String[] parts = numberToDisplay.split("[x+\\-/]");
-//
-//        switch (lastOperation) {
-//            case "+":
-//                if (result == 0 || String.valueOf(result).equals(lastNumber)) {
-//                    result = Float.parseFloat(lastNumber);
-//                } else {
-//                    result = result + Float.parseFloat(lastNumber);
-//                }
-//                break;
-//            case "-":
-//                if (result == 0 || String.valueOf(result).equals(lastNumber)) {
-//                    result = Float.parseFloat(lastNumber);
-//                } else {
-//                    result = result - Float.parseFloat(lastNumber);
-//                }
-//                break;
-//            case "x":
-//                if (result == 0 || String.valueOf(result).equals(lastNumber)) {
-//                    result = Float.parseFloat(lastNumber);
-//                } else {
-//                    result = result * Float.parseFloat(lastNumber);
-//                }
-//                break;
-//            case "/":
-//                if (result == 0 || String.valueOf(result).equals(lastNumber)) {
-//                    result = Float.parseFloat(lastNumber);
-//                } else {
-//                    result = result / Float.parseFloat(lastNumber);
-//                }
-//                break;
-//
-//            default:
-//
-//        }
-//        numberToDisplay = String.valueOf(result);
-//        lastNumber = numberToDisplay;
-        tvMainActivityHasil.setText(String.valueOf(evaluate(numberToDisplay)));
+        result = (float) evaluate(numberToDisplay);
+        numberToDisplay = String.valueOf(result);
+        tvMainActivityHasil.setText(numberToDisplay);
     }
     public static double evaluate(String expression) {
         Expression expr = new ExpressionBuilder(expression).build();
